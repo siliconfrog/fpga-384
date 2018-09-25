@@ -18,7 +18,7 @@ Then open the resulting project in the Arduino IDE or if you took the option to
 install Arduino-mk you can run "make upload".
 
 
-#Projects
+# Projects
 
 
 # Blink
