@@ -1,0 +1,10 @@
+set_io a        15      # SCLK /  "A"  / arduino D13
+set_io b        13      # MISO /  "B"  / arduino D12
+set_io type[0]  12      # MOSI /  "C"  / arduino D11
+set_io type[1]  14      # CE0  /  "12" / arduino D10
+
+set_io --warn-no-port ledR     31      # LED_RED
+set_io --warn-no-port ledG     32      # LED_GREEN
+set_io --warn-no-port ledB      1      # LED_BLUE
+
+set_io --warn-no-port outA     19      # 'E'

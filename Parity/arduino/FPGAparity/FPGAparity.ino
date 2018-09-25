@@ -1,0 +1,89 @@
+/* Copyright (c) 2018, Silicon Frog. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+3. Neither the name of the copyright holder nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+This software is provided by the copyright holders and contributors "as is"
+and any express or implied warranties, including, but not limited to, the
+implied warranties of merchantability and fitness for a particular purpose
+are disclaimed. In no event shall the copyright holder or contributors be
+liable for any direct, indirect, incidental, special, exemplary, or
+consequential damages (including, but not limited to, procurement of
+substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in
+contract, strict liability, or tort (including negligence or otherwise)
+arising in any way out of the use of this software, even if advised of the
+possibility of such damage.  */
+
+#include "FPGA_library.h"
+#include "fpgabin.h"
+#define LED             13
+
+#define CTR0            10
+#define CTR1            12
+#define CTR2            11
+#define CTR3            13
+#define PARITY          A0
+
+/* Connections (as for programming) are:
+ *  13 -> FPGA 'A',    12 -> FPGA 'B',    11 -> FPGA 'C',     10 -> FPGA '12'
+ *  also connect A0 -> FPGA '5' to read the result.
+ */
+
+void setup(void) {
+    bool fProg = FPGAprogram(fpgaBin, sizeof(fpgaBin));
+    Serial.begin(115200);
+    if (fProg) {
+        Serial.println("Programmed");
+    } else {
+        Serial.println("Failed");           // Failed - flash arduino LED
+        while(1) {
+            digitalWrite(LED, LOW);
+            delay(50);
+            digitalWrite(LED, HIGH);
+            delay(50);
+        }
+    }
+}
+
+void loop(void) {
+    int counter[4] = { 0, 0, 0, 0 };;
+    int parity;
+
+    if (digitalRead(CTR0) == HIGH) {
+        counter[0] = 1;
+    }
+    if (digitalRead(CTR1) == HIGH) {
+        counter[1] = 1;
+    }
+    if (digitalRead(CTR2) == HIGH) {
+        counter[2] = 1;
+    }
+    if (digitalRead(CTR3) == HIGH) {
+        counter[3] = 1;
+    }
+
+    if (digitalRead(PARITY) == HIGH) {
+        parity = 1;
+    } else {
+        parity = 0;
+    }
+
+    Serial.print(counter[0]);
+    Serial.print(counter[1]);
+    Serial.print(counter[2]);
+    Serial.print(counter[3]);
+    Serial.print("    ");
+    Serial.print(parity);
+    Serial.println("");
+    delay(5000);
+}

@@ -1,0 +1,49 @@
+# Piname     Silk  Use     Pin--FPGA--Pin        Use
+#            .     3v3      --        --        5V
+# I2Csda     J     GPIO2    27        --        5V
+# I2Cscl     H     GPIO3    26        --        GND
+#            G     GPIO4    23        29        GPIO14   Tx     DIL1
+#            .     GND      --        30        GPIO15   Rx     DIL2
+#            F     GPIO17   22        20        GPIO18
+#            E     GPIO27   19        --        GND
+# CRESET     D     GPIO22   10        18        GPIO23
+#            .     3v3      --        11        GPIO24   CDONE  DIL11
+# MOSI       C     GPIO10   13        --        GND
+# MISO       B     GPIO9    12         8        GPIO25   <CLK>  DIL10  <-- 16 MHz oscillator
+# SCK        A     GPIO11   15        14        GPIO8    CE0    DIL12
+#            .     GND      --        FLASH     GPIO7    CE1    DIL13
+
+
+# set_io                XX <pin> -pullup yes
+# set_io --warn-no-port XX <pin>
+
+# Definitions for LEDs and clock
+set_io --warn-no-port ledR     31       # LED_RED
+set_io --warn-no-port ledG     32       # LED_GREEN
+set_io --warn-no-port ledB      1       # LED_BLUE
+set_io --warn-no-port clk       8       # GPIO25 / DIL10
+
+# Definitions for pins 1-12 (13 only for flash EEPROM)
+set_io --warn-no-port dil1     29
+set_io --warn-no-port dil2     30
+set_io --warn-no-port dil3     31       # LED RED
+set_io --warn-no-port dil4     32       # LED_GREEN
+set_io --warn-no-port dil5      1       # LED_BLUE
+set_io --warn-no-port dil6      2
+set_io --warn-no-port dil7      5
+set_io --warn-no-port dil8      6
+set_io --warn-no-port dil9      7
+set_io --warn-no-port dil10     8       #               FPGA CLK  16MHz
+#set_io --warn-no-port dil11    11       # Arduino D8    FPGA CDONE
+set_io --warn-no-port dil12    14       # CE0 / Arduino SS D10
+
+# Definitions for pins closest to A-J lettering
+set_io --warn-no-port pinA     15       # Arduino SCK  D13
+set_io --warn-no-port pinB     12       # Arduino MISO D12
+set_io --warn-no-port pinC     13       # Arduino MOSI D11
+set_io --warn-no-port pinD     10       # Arduino D9    FPGA CRESET
+set_io --warn-no-port pinE     19
+set_io --warn-no-port pinF     22
+set_io --warn-no-port pinG     23
+set_io --warn-no-port pinH     26
+set_io --warn-no-port pinJ     27

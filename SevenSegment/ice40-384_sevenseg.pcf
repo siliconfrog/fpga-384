@@ -1,0 +1,16 @@
+set_io --warn-no-port   clk       8       # GPIO25/DIL10
+
+set_io segCOM[3]        29      # DIL1
+set_io segCOM[2]        30      # DIL2
+set_io segCOM[1]        31      # DIL3
+set_io segCOM[0]        32      # DIL4
+
+set_io segments[0]       1      # DIL5    e
+set_io segments[1]       2      # DIL6    b
+set_io segments[2]       5      # DIL7    f
+set_io segments[3]       6      # DIL8    a
+set_io segments[4]       7      # DIL9    d
+set_io segments[5]      27      # GPIO2   c
+set_io segments[6]      26      # GPIO3   g
+
+#set_io segments[7]     28      # GPIO3  dp

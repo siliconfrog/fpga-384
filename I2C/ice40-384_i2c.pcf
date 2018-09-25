@@ -1,0 +1,14 @@
+set_io --warn-no-port   ledR     31       # LED_RED
+set_io --warn-no-port   ledG     32       # LED_GREEN
+set_io --warn-no-port   ledB      1       # LED_BLUE
+
+set_io --warn-no-port   clk       8       # GPIO25/DIL10
+
+set_io SDA        27    # GPIO2 and "J"  (Arduino A4)
+set_io SCL        26    # GPIO3 and "H"  (Arduino A5)
+
+set_io stateO[0]   2    # DIL6
+set_io stateO[1]   5    # DIL7
+set_io stateO[2]   6    # DIL8
+
+set_io driveSDA    7    # DIL9

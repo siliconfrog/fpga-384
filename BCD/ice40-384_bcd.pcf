@@ -1,0 +1,10 @@
+set_io --warn-no-port   clk       8       # GPIO25/DIL10
+
+set_io Tens[0]      29      #DIL1
+set_io Tens[1]      30      #DIL2
+set_io Tens[2]      31      #DIL3
+set_io Tens[3]      32      #DIL4
+set_io Ones[0]       1      #DIL5
+set_io Ones[1]       2      #DIL6
+set_io Ones[2]       5      #DIL7
+set_io Ones[3]       6      #DIL8

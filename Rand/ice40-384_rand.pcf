@@ -1,0 +1,15 @@
+set_io --warn-no-port ledR     31       # LED_RED
+set_io --warn-no-port ledG     32       # LED_GREEN
+set_io --warn-no-port ledB      1       # LED_BLUE
+
+set_io --warn-no-port clk       8       # GPIO25/DIL10
+
+#set_io --warn-no-port LFSRout[8]   7   # DIL9
+#set_io --warn-no-port LFSRout[7]   6   # DIL8
+#set_io --warn-no-port LFSRout[6]   5   # DIL7
+#set_io --warn-no-port LFSRout[5]   2   # DIL6
+#set_io --warn-no-port LFSRout[4]   1   # DIL5
+#set_io --warn-no-port LFSRout[3]  32   # DIL4
+#set_io --warn-no-port LFSRout[2]  31   # DIL3
+#set_io --warn-no-port LFSRout[1]  30   # DIL2
+#set_io --warn-no-port LFSRout[0]  29   # DIL1

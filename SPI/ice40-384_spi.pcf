@@ -1,0 +1,8 @@
+set_io --warn-no-port   ledR     31       # LED_RED
+set_io --warn-no-port   ledG     32       # LED_GREEN
+set_io --warn-no-port   clk       8       # GPIO25/DIL10
+
+set_io                  sck      15      # GPIO11 (SCK) / 'A'
+set_io                  ss       14      # GPIO8  (CE0) / '12'
+set_io                  mosi     12      # GPIO9  (MOSI) / 'C'
+set_io                  miso     13      # GPIO10 (MISO) / 'B'

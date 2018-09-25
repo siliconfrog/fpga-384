@@ -1,0 +1,19 @@
+#set_io --warn-no-port   ledR     31       # LED_RED
+#set_io --warn-no-port   ledG     32       # LED_GREEN
+#set_io --warn-no-port   ledB      1       # LED_BLUE
+
+set_io --warn-no-port clk       8      # GPIO25 / DIL10
+
+set_io --warn-no-port    in[3]   15       # SCK
+set_io --warn-no-port    in[2]   14       # CE0
+set_io --warn-no-port    in[1]   13       # MISO
+set_io --warn-no-port    in[0]   12       # MOSI
+
+set_io --warn-no-port   out[7]    6       # DIL8
+set_io --warn-no-port   out[6]    5       # DIL7
+set_io --warn-no-port   out[5]    2       # DIL6
+set_io --warn-no-port   out[4]    1       # DIL5
+set_io --warn-no-port   out[3]   32       # DIL4
+set_io --warn-no-port   out[2]   31       # DIL3
+set_io --warn-no-port   out[1]   30       # DIL2
+set_io --warn-no-port   out[0]   29       # DIL1
