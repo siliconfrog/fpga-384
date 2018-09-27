@@ -8,7 +8,7 @@ This contains the example code to be used with the Silicon Frog fpga-384.
 To compile on the Raspberry Pi:
     $ cd Blink
     $ make
-    $ sf_iceprog fpga.bin
+    $ ./fpga-384 fpga.bin
 
 To compile for Arduino:
     $ cd Blink

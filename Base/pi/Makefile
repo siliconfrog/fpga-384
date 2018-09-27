@@ -3,7 +3,7 @@ PROG    = fpga-384
 LIBDIR=../../Base/pi
 SOURCES = pi.cpp $(LIBDIR)/FPGA_library.cpp
 
-CFLAGS += -g -Wall -Werror -I$(LIBDIR)
+CFLAGS += -g -std=c++11 -Wall -Werror -I$(LIBDIR)
 LKFLAGS=-lstdc++
 uname_m := $(shell uname -m)
 ifeq ($(uname_m), armv7l)

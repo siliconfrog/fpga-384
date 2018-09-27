@@ -117,7 +117,7 @@ $(ARD_BIN): $(ARD_SOURCE) $(ARD)/$(ARD_FBINH) $(ARD_FPGAPROG)
 	@$(PRINT) "\n*** HEX file built - ready for make upload\n"
 
 $(ARD_FPGAPROG): $(ARD_FPGAPROGSRC)
-	cd $(ARD) && $(CC) -Wall -Werror -lstdc++ ../../$< -o $@
+	cd $(ARD) && $(CC) -Wall -Werror -std=c++11 -lstdc++ ../../$< -o $@
 
 $(ARD)/$(ARD_FBINH): $(ARD_FPGAPROG) $(FPGABIN)
 	cd $(ARD) && ./$(ARD_FPGAPROG) ../../$(FPGABIN) >$(ARD_FBINH)
